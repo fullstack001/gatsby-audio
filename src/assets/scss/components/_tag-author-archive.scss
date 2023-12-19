@@ -1,0 +1,110 @@
+.tag-card {
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+    height: calc(100% - 2rem);
+    border: 1px solid var(--c-border-light);
+    border-radius: var(--size-2);
+    align-items: center;
+    color: var(--c-text-main);
+    > div:first-child {
+        margin-right: 1rem;
+    }
+    .tag-image-wrap {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        border-radius: var(--size-2);
+        overflow: hidden;
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    .tag-info-wrap {
+        flex-grow: 1;
+    }
+    .tag-name {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        border-bottom: 2px solid transparent;
+        transition: border-color 250ms;
+    }
+    &:hover {
+        .tag-name {
+            border-color: var(--c-text-main);
+        }
+    }
+    .post-count {
+        color: var(--c-text-light);
+    }
+}
+
+// author card
+.author-card {
+    display: block;
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+    height: calc(100% - 2rem);
+    border: 1px solid var(--c-border-light);
+    border-radius: var(--size-2);
+    color: var(--c-text-main);
+    .avatar-wrap {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto;
+        background: var(--c-gray-light);
+    }
+    .avatar {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        &.no-image {
+            svg {
+                color: var(--c-text-main);
+                width: 120%;
+                height: 120%;
+                margin-left: -10%;
+                opacity: 0.5;
+            }
+        }
+    }
+    .author-info {
+        text-align: center;
+    }
+    .author-meta {
+        margin-bottom: 1rem;
+        span {
+            &.author-location {
+                margin-right: 8px;
+                &:after {
+                    content: "•";
+                    margin-left: 8px;
+                    margin-right: 8px;
+                    position: absolute;
+                    display: inline-block;
+                    font-weight: 700;
+                }
+            }
+            &:nth-child(2) {
+                margin-left: 8px;
+            }
+        }
+    }
+    .name {
+        border-bottom: 2px solid transparent;
+        display: inline-block;
+        transition: border-color 250ms;
+    }
+    &:hover {
+        .name {
+            border-color: var(--c-text-main);
+        }
+    }
+}

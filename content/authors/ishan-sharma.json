@@ -1,0 +1,21 @@
+{
+  "name": "Ishan Sharma",
+  "email": "ishan@example.com",
+  "description": "Ishan is back end developer by profession and writer by passion. He writes science fiction novels and short story mostly for children. He is the always smiling person.",
+  "profilePicture": "../images/ishan.jpg",
+  "location": "Delhi",
+  "socialLinks": [
+    {
+      "platform": "facebook",
+      "url": "https://www.facebook.com/gbjsolution"
+    },
+    {
+      "platform": "twitter",
+      "url": "https://twitter.com/gbjsolution"
+    },
+    {
+      "platform": "linkedin",
+      "url": "#"
+    }
+  ]
+}

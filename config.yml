@@ -1,0 +1,230 @@
+backend:
+  name: github
+  repo: shakhsiyah/atstudio
+  branch: main # Branch to update (optional; defaults to master)
+
+# Uncomment below to enable editorial workflow draft
+# publish_mode: editorial_workflow
+
+media_folder: content/images/ # Media files will be stored in the repo under images/uploads
+public_folder: ../images/
+site_url: https://atstudios.netlify.app # Replace with your live site URL
+
+local_backend: true
+
+# collections
+collections:
+  # Posts collection
+  - name: "posts"
+    label: "Posts"
+    label_singular: "Post"
+    folder: "content/posts"
+    identifier_field: "name"
+    create: true
+    sortable_fields: ["date", "title", "author", "language.en"]
+    view_filters:
+      - label: Drafts
+        field: published
+        pattern: false
+      - label: Published
+        field: published
+        pattern: true
+      - label: Featured
+        field: featured
+        pattern: true
+    view_groups:
+      - label: Year
+        field: date
+        # groups matched by the pattern
+        pattern: \d{4}
+      - label: Published
+        field: published
+      - label: author
+        field: author
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          format: "YYYY-MM-DD HH:mm:ssZ",
+          date_format: "LL",
+          time_format: "hh:mm:ss a Z",
+        }
+      - {
+          label: "Featured Image",
+          name: "featuredImage",
+          widget: image,
+          allow_multiple: false,
+          required: false,
+        }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "relation",
+          collection: "tags",
+          search_fields: ["name"],
+          value_field: "name",
+          display_fields: ["name"],
+          multiple: true,
+          required: false,
+        }
+      - {
+          label: "Author",
+          name: "author",
+          widget: "relation",
+          collection: "authors",
+          search_fields: ["name"],
+          value_field: "name",
+          display_fields: ["name"],
+        }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
+      - {
+          label: "Featured",
+          name: "featured",
+          widget: "boolean",
+          default: false,
+        }
+      - {
+          label: "Published",
+          name: "published",
+          widget: "boolean",
+          default: false,
+        }
+      - { label: "Post Content", name: body, widget: markdown, required: false }
+
+  # Pages collection
+  - name: "pages"
+    label: "Pages"
+    label_singular: "Page"
+    folder: "content/pages"
+    identifier_field: "name"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Date",
+          name: "date",
+          widget: "datetime",
+          format: "YYYY-MM-DD HH:mm:ssZ",
+          date_format: "LL",
+          time_format: "LTS Z",
+        }
+      - {
+          label: "Featured Image",
+          name: "featuredImage",
+          widget: image,
+          allow_multiple: false,
+          required: false,
+        }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
+      - {
+          label: "Published",
+          name: "published",
+          widget: "boolean",
+          default: false,
+        }
+      - { label: "Page Content", name: body, widget: markdown, required: false }
+
+  # Tag collection
+  - name: "tags"
+    label: "Tags"
+    label_singular: "Tag"
+    folder: "content/tags"
+    identifier_field: "name"
+    extension: "json"
+    create: true
+    preview: false
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
+      - {
+          label: "Color",
+          name: "color",
+          widget: "color",
+          enableAlpha: true,
+          required: false,
+        }
+      - {
+          label: "Tag Cover Image",
+          name: "coverImage",
+          widget: image,
+          allow_multiple: false,
+          required: false,
+        }
+
+  # Author collection
+  - name: "authors"
+    label: "Authors"
+    label_singular: "Author"
+    folder: "content/authors"
+    identifier_field: "name"
+    extension: "json"
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Email", name: "email", widget: "string" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "text",
+          required: false,
+        }
+      - {
+          label: "Profile Picture",
+          name: "profilePicture",
+          widget: image,
+          allow_multiple: false,
+          required: false,
+        }
+      - {
+          label: "Author Cover Image",
+          name: "coverImage",
+          widget: image,
+          allow_multiple: false,
+          required: false,
+        }
+      - {
+          label: "Location",
+          name: "location",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Social Media Links",
+          label_singular: "Social Media Link",
+          name: "socialLinks",
+          widget: "list",
+          required: false,
+          fields:
+            [
+              {
+                label: "Platform",
+                name: "platform",
+                widget: "select",
+                options:
+                  [
+                    { label: "Facebook", value: "facebook" },
+                    { label: "Twitter", value: "twitter" },
+                    { label: "YouTube", value: "youtube" },
+                    { label: "Instagram", value: "instagram" },
+                  ],
+              },
+              { label: "URL", name: "url", widget: "string" },
+            ],
+        }

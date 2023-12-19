@@ -1,0 +1,131 @@
+.search-popup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: var(--c-body-bg);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 100ms ease-in-out;
+    z-index: -2;
+    &.visible {
+        opacity: 1;
+        visibility: visible;
+        z-index: 4000002;
+    }
+    .close-button {
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        line-height: 0;
+        z-index: 999;
+        color: var(--c-text-main);
+        transition: all 200ms ease-in-out;
+        &:hover {
+            color: var(--c-primary-main);
+        }
+        &> * {
+            pointer-events: none;
+        }
+        svg {
+            width: 32px;
+            height: 32px;
+        }
+    }
+    .popup-inner {
+        max-width: 700px;
+        margin-top: 10vh;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0px 16px;
+        height: 80vh;
+        pointer-events: none;
+        & * {
+            pointer-events: auto;
+        }
+    }
+    .inner-container {
+        height: 100%;
+        pointer-events: none;
+    }
+}
+.search-form {
+    align-items: center;
+    margin-bottom: 0.5rem;
+    .search-form-box {
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 1.25rem;
+    }
+}
+.search-close-note {
+    margin: -1rem 1.25rem 1rem;
+    text-align: right;
+    font-size: 0.75rem;
+    color: var(--text-color-light);
+}
+.suggested-tags {
+    padding: 1.25rem;
+    &.hidden {
+        display: none;
+    }
+}
+@media(max-width: 767px) {
+    .search-close-note {
+        display: none;
+    }
+    .search-form {
+        margin-bottom: 1rem;
+    }
+}
+input[type='text'].search-input {
+    margin-bottom: 0;
+}
+.search-result {
+    max-height: calc(100% - 116px);
+    overflow: auto;
+    padding-right: 8px;
+    .search-results-item {
+        border-bottom: 1px solid var(--c-border-light);
+        margin-left: 1.25rem;
+        &:last-child {
+            border-bottom: none;
+        }
+        a {
+            color: var(--text-color-normal);
+            padding: 0.75rem 1.25rem 0.75rem 0;
+            display: block;
+            &:hover {
+                .title {
+                    color: var(--theme-color);
+                }
+            }
+        }
+        .title {
+            font-size: 1.125rem;
+            margin-top: 0;
+            margin-bottom: 8px;
+            span {
+                border-bottom: 2px solid transparent;
+                transition: border-color 250ms;
+            }
+        }
+        &:hover {
+            .title {
+                span {
+                    border-color: var(--c-text-main);;
+                }
+            }
+        }
+        .meta {
+            font-size: 0.75rem;
+        }
+    }
+}
+.suggested-tags {
+    a {
+        margin: 0 8px 12px 0;
+    }
+}

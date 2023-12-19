@@ -1,0 +1,53 @@
+.archive-wrap {
+    max-width: 740px;
+    margin: 0 auto;
+    .py,
+    .pm {
+        font-size: 1.5rem;
+        font-weight: 600;
+        padding-bottom: 4px;
+        margin-top: 24px;
+        margin-bottom: 16px;
+        color: var(--c-primary-main);
+        border-bottom: 1px solid var(--c-border);
+    }
+}
+.archive-post {
+    position: relative;
+    .inner {
+        padding: 16px 0;
+        display: flex;
+    }
+    .post-date {
+        color: var(--c-text-light);
+        margin-right: 2px;
+        font-size: 0.875rem;
+        white-space: nowrap;
+        min-width: 58px;
+        &::after {
+            display: none;
+        }
+    }
+    .title {
+        margin: 0;
+        font-size: 1.125rem;
+        a {
+            color: var(--c-text-main);
+            border-bottom: 2px solid transparent;
+            &:hover {
+                color: var(--c-primary-main);
+                border-color: var(--c-primary-main);
+            }
+        }
+    }
+}
+@for $i from 2011 through 2030 {
+    .py-#{$i} + .py-#{$i} .py {
+        display: none;
+    }
+}
+@for $i from 1 through 12 {
+    .pm-#{$i} + .pm-#{$i} .pm {
+        display: none;
+    }
+}

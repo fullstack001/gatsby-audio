@@ -1,0 +1,17 @@
+{
+  "name": "Surabhi Gupta",
+  "email": "suravi@gmail.ocm",
+  "description": "Front end developer by profession. Digital painting enthusiast. She also involved in various social activity. Fan of winter and snow.",
+  "socialLinks": [
+    {
+      "platform": "twitter",
+      "url": "https://twitter.com/gbjsolution"
+    },
+    {
+      "platform": "youtube",
+      "url": "#"
+    }
+  ],
+  "location": "Kerala",
+  "profilePicture": "../images/suravi.jpg"
+}

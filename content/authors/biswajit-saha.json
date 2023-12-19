@@ -1,0 +1,22 @@
+{
+  "name": "Biswajit Saha",
+  "email": "gbjsolution@gmail.com",
+  "description": "Biswajit Saha is a very simple person. He likes to ride a bicycle when free. Prefers tea over coffee. He is currently writing code at gbjsolution.com",
+  "profilePicture": "../images/biswajit.jpg",
+  "location": "India",
+  "socialLinks": [
+    {
+      "platform": "facebook",
+      "url": "https://www.facebook.com/gbjsolution"
+    },
+    {
+      "platform": "twitter",
+      "url": "https://twitter.com/gbjsolution"
+    },
+    {
+      "platform": "instagram",
+      "url": "https://www.instagram.com/biswajit.saha_/"
+    }
+  ],
+  "coverImage": "../images/default.jpg"
+}

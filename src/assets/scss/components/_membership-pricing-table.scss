@@ -1,0 +1,102 @@
+.pricing-table {
+    border: 1px solid var(--c-border);
+    padding: 32px;
+    border-radius: var(--size-2);
+    position: relative;
+    margin-bottom: 3rem;
+    .table-header {
+        border-bottom: 1px solid var(--c-border);
+    }
+    .table-title {
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--c-primary-main);
+        margin-bottom: 8px;
+    }
+    .price {
+        sup {
+            position: relative;
+            top: -12px;
+            font-size: 24px;
+        }
+    }
+    .table-details {
+        // padding: 0;
+        margin-top: 24px;
+        margin-bottom: 40px;
+    }
+    .label {
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .js-discount {
+        display: none;
+        &.visible {
+            display: inline-flex;
+        }
+    }
+}
+
+.icon-list {
+    list-style: none;
+    padding-left: 28px;
+    li {
+        margin-bottom: 16px;
+        position: relative;
+        @extend %tick_mark_icon;
+    }
+}
+
+%tick_mark_icon {
+    &:before {
+        content: "";
+        position: relative;
+        width: 16px;
+        height: 16px;
+        margin-left: -28px;
+        margin-right: 12px;
+        top: 3px;
+        line-height: 16px;
+        background-color: var(--c-success-dark);
+        color: var(--c-black);
+        font-size: 10px;
+        border-radius: 50%;
+        justify-content: center;
+        display: inline-flex;
+    }
+    &::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: -20px;
+    display: inline-block;
+    height: 6px;
+    width: 10px;
+    border: 2px solid var(--c-white);
+    border-top-width: 0;
+    border-right-width: 0;
+    transform: translate(-50%,-75%) rotate(-45deg);
+    }
+}
+.currency-name {
+    text-transform: uppercase;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .pricing-table {
+        height: calc(100% - 3rem);
+        display: flex;
+        flex-direction: column;
+        .table-details {
+            flex-grow: 1;
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .pricing-table {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

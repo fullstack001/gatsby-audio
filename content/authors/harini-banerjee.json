@@ -1,0 +1,21 @@
+{
+  "name": "Harini Banerjee",
+  "email": "harini@example.com",
+  "description": "Harini Banerjee is an award-winning young blogger and content marketer. She also sings sometimes. Frequent traveler, cricket fan, and technology enthusiast.",
+  "profilePicture": "../images/harini.jpg",
+  "location": "Mumbai",
+  "socialLinks": [
+    {
+      "platform": "facebook",
+      "url": "https://www.facebook.com/gbjsolution"
+    },
+    {
+      "platform": "twitter",
+      "url": "https://twitter.com/gbjsolution"
+    },
+    {
+      "platform": "instagram",
+      "url": "#"
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+// paid members only cta box
+.paid-membership-cta {
+    padding: 24px;
+    margin-bottom: 64px;
+    background-image: var(--gradient-primary);
+    border-radius: var(--size-2);
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    &[data-width="medium"], &[data-width="small"] {
+        align-items: center;
+        justify-content: center;
+        .text-wrap {
+            flex-basis: 100%;
+            margin-right: 0;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .hidden-small {
+            display: none;
+        }
+        .hidden-large {
+            display: inline-block;
+        }
+    }
+    &[data-width="small"] {
+        .plans-wrap {
+            align-items: center;
+        }
+        .plans-wrap-inner {
+            justify-content: center;
+        }
+        .plan {
+            &:first-child {
+                margin: 0 12px 24px;
+            }
+        }
+    }
+    &::before {
+        content: "";
+        width: 24rem;
+        height: 24rem;
+        position: absolute;
+        left: -3.5rem;
+        top: -10rem;
+        border-radius: 50%;
+        border: 5rem solid rgba(0,0,0, 0.06);
+        z-index: 0;
+    }
+    >* {
+        z-index: 1;
+    }
+    .text-wrap {
+        flex: 1;
+        color: var(--c-white);
+        margin-right: 24px;
+        .title {
+            color: var(--c-white);
+            margin-top: 0;
+        }
+        .description {
+            font-size: 1rem;
+        }
+    }
+    .plans-wrap {
+        flex-direction: column;
+        justify-content: left;
+    }
+    .plan {
+        background: var(--c-white);
+        border-radius: var(--size-2);
+        padding: 20px;
+        flex-direction: column;
+        min-width: 190px;
+        &:first-child {
+            margin-right: 16px;
+        }
+    }
+    .plan-name {
+        text-transform: uppercase;
+        color: var(--c-primary-main);
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+    .price {
+        margin-top: 0;
+        margin-bottom: 8px;
+        color: var(--c-black);
+        sup {
+            position: relative;
+            top: -12px;
+            font-size: 24px;
+        }
+    }
+    .content {
+        flex: 1;
+        margin-bottom: 16px;
+    }
+    .js-discount {
+        display: none;
+        &.visible {
+            display: inline-flex;
+        }
+    }
+    .plan-page-link {
+        color: var(--c-white);
+        font-size: 16px;
+        line-height: 20px;
+        border: none;
+        margin: 16px 0 0;
+        border-bottom: 2px solid transparent;
+        svg {
+            vertical-align: middle;
+            width: 14px;
+            height: 14px;
+            position: relative;
+            transition: all 200ms;
+        }
+        &:hover {
+            color: var(--c-white);
+            border-color: var(--c-white);
+            svg {
+                margin-left: 8px;
+            }
+        }
+    }
+    .hidden-small {
+        display: inline-block;
+    }
+    .hidden-large {
+        display: none;
+    }
+}
+@media screen and (max-width:575px) {
+    .paid-membership-cta {
+        .price {
+            sup {
+                top: -6px;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+// Free membership cta for members only content
+.free-membership-cta {
+    padding: 32px 24px;
+    margin-bottom: 64px;
+    background-image: var(--gradient-primary);
+    color: var(--c-white);
+    border-radius: var(--size-2);
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    .title {
+        color: var(--c-white);
+        margin-top: 0;
+    }
+    .button-wrap {
+        margin: 24px 0;
+    }
+    a:not(.btn) {
+        color: var(--c-white);
+        border-color: var(--c-white);
+    }
+    a:hover {
+        color: var(--c-white);
+        border-color: var(--c-white);
+    }
+}

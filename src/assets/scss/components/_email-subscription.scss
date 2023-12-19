@@ -1,0 +1,100 @@
+.email-subs-wrap {
+	background-image: var(--gradient-primary);
+	padding: 64px 24px;
+	margin-top: 64px;
+	background-image: var(--gradient-primary);
+	border-radius: var(--size-2);
+	color: var(--c-white);
+	position: relative;
+	overflow: hidden;
+	&::before {
+		content: "";
+		width: 18rem;
+		height: 18rem;
+		position: absolute;
+		left: -2rem;
+		top: -6rem;
+		border-radius: 50%;
+		border: 3.5rem solid rgba(0, 0, 0, 0.06);
+		z-index: 0;
+	}
+	&::after {
+		content: "";
+		width: 26rem;
+		height: 26rem;
+		position: absolute;
+		left: -6rem;
+		top: -10rem;
+		border-radius: 50%;
+		border: 2px dashed rgba(0, 0, 0, 0.06);
+		z-index: 0;
+	}
+	& > * {
+		position: relative;
+	}
+	.icon {
+		z-index: 1;
+		svg {
+			width: 120px;
+			height: auto;
+		}
+	}
+	.email-subs-section-title {
+		color: var(--c-white);
+		margin-top: 2.5rem;
+		z-index: 1;
+	}
+	.email-subs-section-description {
+		font-size: 1.25rem;
+		z-index: 1;
+	}
+	.form-wrap {
+		padding: 16px;
+		background: var(--c-white);
+		border-radius: var(--size-2);
+		max-width: 760px;
+		margin: 28px auto 0;
+		label {
+			color: var(--c-black);
+		}
+	}
+	input[type="email"],
+	input[type="text"],
+	input[type="url"],
+	textarea {
+		background: var(--c-white);
+		border-color: rgba(0, 0, 0, 0.1);
+		&:focus {
+			border-color: var(--c-primary-main);
+		}
+	}
+}
+/* setting text main color to light theme
+for input box as these has white background */
+[data-theme="dark"] {
+	.email-subs-wrap {
+		input[type="email"],
+		input[type="text"] {
+			--c-text-main: #161f38;
+			--c-text-light: #575861;
+		}
+	}
+}
+@media (max-width: 767px) {
+	.email-subs-wrap {
+		padding: 48px 24px;
+	}
+}
+@media (max-width: 575px) {
+	.email-subs-wrap {
+		padding: 24px 16px;
+		.icon {
+			svg {
+				width: 80px;
+			}
+		}
+		.email-subs-section-title {
+			margin-top: 1.5rem;
+		}
+	}
+}

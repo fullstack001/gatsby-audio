@@ -1,0 +1,95 @@
+.prev-nex-wrap {
+    margin-top: 6rem;
+    .post {
+        .featured-image {
+            width: 120px;
+            height: 120px;
+            border-radius: var(--size-2);
+            overflow: hidden;
+            background-color: var(--c-gray-lighter);
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .content-wrap {
+            flex-basis: 0;
+            flex-grow: 999;
+            .title {
+                margin-top: 1rem;
+            }
+        }
+        a {
+            .nav-text {
+                font-size: 0.875rem;
+                color: var(--c-text-light);
+                display: block;
+                margin-bottom: 0.5rem;
+            }
+            .title {
+                border-bottom: 2px solid transparent;
+                transition: all 250ms;
+                display: inline;
+            }
+            &:hover {
+                .title {
+                    border-color: var(--c-text-main);
+                }
+            }
+        }
+        .post-meta {
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--c-text-light);
+            > :not(:last-child)::after {
+                content: "•";
+                margin-left: 8px;
+                position: absolute;
+                display: inline-block;
+                font-weight: 700;
+            }
+            > :not(:first-child) {
+                margin-left: 18px;
+            }
+        }
+    }
+    .next-post {
+        .featured-image {
+            margin-right: 24px;
+        }
+    }
+    .prev-post {
+        a {
+            flex-direction: row-reverse;
+        }
+        .featured-image {
+            margin-left: 24px;
+        }
+        .content-wrap {
+            text-align: right;
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .prev-nex-wrap {
+        .prev-post {
+            a {
+                flex-direction: row;
+            }
+            .featured-image {
+                margin-left: 0;
+                margin-right: 24px;
+            }
+            .content-wrap {
+                text-align: left;
+            }
+        }
+        .post {
+            &:last-child {
+                margin-top: 24px;
+            }
+        }
+    }
+}
